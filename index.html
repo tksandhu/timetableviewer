@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f6f3" />
+    <title>Campus Time — Timetable</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Campus Time home">
+          <span class="brand-mark"><span></span><span></span><span></span><span></span></span>
+          <span>campus<span class="brand-light">time</span></span>
+        </a>
+        <div class="term-chip"><span class="live-dot"></span> JUL — DEC 2026</div>
+      </header>
+
+      <section class="intro">
+        <div class="intro-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> YOUR WEEK, IN VIEW</div>
+          <h1>Make room<br />for <em>what’s next.</em></h1>
+          <p>Pick your year and group to find your classes, labs, and everything in between.</p>
+        </div>
+        <div class="orbit-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="orbit-core"><span>✳</span></div>
+          <div class="orbit-note note-top">MON — SAT</div><div class="orbit-note note-bottom">14 PERIODS</div>
+        </div>
+      </section>
+
+      <section class="selector-card" aria-labelledby="choose-heading">
+        <div class="selector-heading">
+          <div><div class="step-label">01 / GET STARTED</div><h2 id="choose-heading">Find your timetable</h2></div>
+          <div class="source-tag"><span class="source-icon">↗</span> Academic schedule</div>
+        </div>
+        <div class="select-row">
+          <label class="field"><span>YEAR</span><span class="select-wrap"><select id="yearSelect" aria-label="Choose year"></select><span class="chevron">⌄</span></span></label>
+          <div class="field-divider" aria-hidden="true">/</div>
+          <label class="field"><span>GROUP CODE</span><span class="select-wrap"><select id="groupSelect" aria-label="Choose group code"></select><span class="chevron">⌄</span></span></label>
+          <button id="showButton" class="show-button" type="button">Show timetable <span>↗</span></button>
+        </div>
+      </section>
+
+      <section id="scheduleSection" class="schedule-section" hidden aria-live="polite">
+        <div class="schedule-header">
+          <div><div class="step-label">02 / YOUR SCHEDULE</div><h2 id="scheduleTitle">Year 1 <span>· Group A</span></h2><p id="scheduleMeta">July–December 2026</p></div>
+          <div class="class-count"><strong id="blockCount">0</strong><span>class blocks</span></div>
+        </div>
+        <div class="toolbar">
+          <div id="dayTabs" class="day-tabs" role="tablist" aria-label="Choose day"></div>
+          <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Find a course or room" aria-label="Search timetable" /><kbd>/</kbd></label>
+        </div>
+        <div class="table-wrap">
+          <table class="schedule-table">
+            <thead><tr><th class="time-col">TIME</th><th>CLASS DETAILS</th><th class="period-col">PERIOD</th></tr></thead>
+            <tbody id="scheduleRows"></tbody>
+          </table>
+          <div id="emptyState" class="empty-state" hidden><span>◌</span><strong>No classes found</strong><p>Try a different search, or choose another day.</p></div>
+        </div>
+        <div class="schedule-foot"><span><span class="foot-dot"></span> Schedule shown as listed in the source timetable</span><button id="backToTop" type="button">Back to top ↑</button></div>
+      </section>
+
+      <footer><span>Built for the in-between moments.</span><span class="footer-right">CAMPUS TIME <span>©</span> 2026</span></footer>
+    </main>
+    <script src="data/timetables.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
